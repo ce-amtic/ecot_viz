@@ -131,6 +131,8 @@ def handle_dataset(
         image_resize=(768, -1),
         prefetch_num=0,
     )
+    dataset.ego_camera_key = None
+    dataset.loaded_camera_keys = [dataset.third_camera_key]
 
     if episodes is None:
         episodes = dataset.all_episode_stems
