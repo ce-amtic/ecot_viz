@@ -129,14 +129,14 @@ def handle_dataset(
         ego_name=EGO_CAMERA_MAP.get(dataset_name, None),
         third_name=THIRD_CAMERA_MAP.get(dataset_name, None),
         image_resize=(768, -1),
-        prefetch_num=0,
+        # prefetch_num=0,
     )
     dataset.ego_camera_key = None
     dataset.loaded_camera_keys = [dataset.third_camera_key]
 
     if episodes is None:
         episodes = dataset.all_episode_stems
-    random.shuffle(episodes)
+    # random.shuffle(episodes)
 
     for ep in episodes:
         print(f"Processing {dataset.name} - {ep}")
